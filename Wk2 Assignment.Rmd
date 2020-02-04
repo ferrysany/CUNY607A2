@@ -1,0 +1,22 @@
+---
+title: "Data Acquisition and Management Week 2 Assignment"
+author: "Chun San Yip"
+date: "2019/02/02"
+output: html_document
+---
+
+Overview:
+The assignment is to gather rating of 6 movies from 5 people and to store the observations in a SQL database. This R will read a intermediate .CSV file.
+
+Load the dplyr packages.
+```{r load-packages, message = FALSE}
+library(dplyr)
+```
+
+```{r Read data from CSV}
+theUrl <- "https://raw.githubusercontent.com/ferrysany/CUNY607A2/master/output4r.csv"
+movie <- read.table(file=theUrl, header=FALSE, sep=",", quote = "")
+colnames(movie) <- c('Movie', 'Year', 'Person', 'Rating')
+head(movie)
+```
+
